@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Review = ({
+const oneReview = ({
     headline,
     byline,
     link,
@@ -23,7 +23,11 @@ const Review = ({
     )
 }
 
-const MovieReviews = (props) => <div className="review-list">{props.reviews.map(Review)}</div>
+const MovieReviews = ( props ) => <div className="review-list">
+
+    {props.reviews.map(oneReview)}
+
+    </div>
 // SAME:
 // const MovieReviews = ({ reviews }) => <div className="review-list">{reviews.map(Review)}</div>;
 export default MovieReviews

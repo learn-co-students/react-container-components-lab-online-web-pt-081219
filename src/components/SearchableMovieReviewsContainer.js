@@ -7,8 +7,6 @@ const NYT_API_KEY = 'dGpQ5OmGP2SgfvZimlpCUoF4iOag9qzZ';
 const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?'
             + `api-key=${NYT_API_KEY}`;
 
-// Code SearchableMovieReviewsContainer Here
-
 export default class SearchableMovieReviewsContainer extends Component {
 
         state = {
@@ -22,7 +20,7 @@ export default class SearchableMovieReviewsContainer extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        fetch(URL.concat(this.state.searchTerm))
+        fetch(URL.concat(this.state.searchTerm)) // this is really too specific to be at all useful/functional. who knows the actual full titles of films?
             .then(json => json.json())
             .then(data => this.setState({reviews: data.results}))
     }

@@ -9,7 +9,6 @@ const review = ({
   summary_short, 
   link
 }) => (
-  <div className='review'>
   <Review
     multimedia={multimedia}
     headline={headline}
@@ -18,7 +17,7 @@ const review = ({
     summary={summary_short}
     link={link}
     key={headline}
-  /></div>
+  />
 )
 
 const MovieReviews = ({ reviews }) => (

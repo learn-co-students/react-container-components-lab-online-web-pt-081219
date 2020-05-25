@@ -6,7 +6,16 @@ const MovieReview = (props) => {
         <div className="review-list">
             {
                 reviews.map((review, index) => {
-                    return <h2 key={index} className="review">{review.display_title}</h2>
+                    return(
+                        <div key={review.headline} className="review">
+                            <header>
+                                <a className="review-link" href={review.link.url}>{review.headline}</a>
+                                <br/>
+                                <span className="author">{review.byline}</span>
+                            </header>
+                            <blockquote>{review.summary_short}</blockquote>
+                        </div>   
+                    )
                 })
             }
         </div>
